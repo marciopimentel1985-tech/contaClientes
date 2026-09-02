@@ -1,12 +1,343 @@
-GerenciadorTarefas
-Atividade da matéria de POO
+# 📋 Gerenciador de Tarefas
 
-Criar um sistema que gerencia tarefas Com: Cadastro de usuário Listar Usuário Cadastrar projeto Listar Projeto Cadastrar Tarefa listar Tarefa Iniciar Tarefa Concluir Tarefa Relatório
+Sistema de gerenciamento de tarefas desenvolvido em **Python**, utilizando conceitos de **Programação Orientada a Objetos (POO)**.
 
-Tecnologias utilizadas
+O sistema permite cadastrar usuários, criar projetos, adicionar tarefas, definir prioridades, acompanhar o status das tarefas e visualizar um relatório de produtividade.
 
-Python
-Programação Orientada a Objetos
-Git
-GitHub
-VS Code
+---
+
+## 🚀 Funcionalidades
+
+O sistema possui as seguintes funcionalidades:
+
+* 👤 **Cadastro de usuários**
+* 📋 **Listagem de usuários**
+* 📁 **Cadastro de projetos**
+* 📂 **Listagem de projetos**
+* 📝 **Cadastro de tarefas**
+* 📌 **Listagem de tarefas**
+* ▶️ **Iniciar tarefas**
+* ✅ **Concluir tarefas**
+* ⏰ **Identificação de tarefas vencidas**
+* 📊 **Relatório de produtividade**
+* 📈 **Cálculo do progresso dos projetos**
+* 🔥 **Controle de prioridades**
+
+---
+
+## 🧩 Estrutura do Sistema
+
+O projeto utiliza algumas classes principais:
+
+### 👤 Usuario
+
+Representa um usuário do sistema.
+
+Possui:
+
+* ID
+* Nome
+* E-mail
+* Senha
+* Lista de projetos
+
+Métodos principais:
+
+* `criar_projeto()`
+* `listar_projetos()`
+
+---
+
+### 📁 Projeto
+
+Representa um projeto pertencente a um usuário.
+
+Possui:
+
+* ID
+* Nome
+* Descrição
+* Data de criação
+* Usuário responsável
+* Lista de tarefas
+
+Métodos principais:
+
+* `adicionar_tarefa()`
+* `remover_tarefa()`
+* `calcular_progresso()`
+
+O progresso do projeto é calculado com base na quantidade de tarefas concluídas.
+
+---
+
+### 📝 Tarefa
+
+Representa uma tarefa dentro de um projeto.
+
+Possui:
+
+* ID
+* Título
+* Descrição
+* Prioridade
+* Data limite
+* Status
+* Projeto relacionado
+
+Métodos principais:
+
+* `marcar_concluida()`
+* `esta_vencida()`
+
+---
+
+## 🔥 Prioridades
+
+As tarefas podem possuir quatro níveis de prioridade:
+
+| Prioridade | Descrição                                 |
+| ---------- | ----------------------------------------- |
+| 🟢 Baixa   | Tarefa de menor urgência                  |
+| 🟡 Média   | Tarefa de prioridade intermediária        |
+| 🟠 Alta    | Tarefa que exige maior atenção            |
+| 🔴 Urgente | Tarefa que deve ser tratada imediatamente |
+
+---
+
+## 📌 Status das tarefas
+
+Cada tarefa pode possuir um dos seguintes status:
+
+* **Pendente**
+* **Em andamento**
+* **Concluída**
+
+O status inicialmente é definido como **Pendente**.
+
+---
+
+## 📊 Relatório de produtividade
+
+O sistema possui um relatório que apresenta:
+
+* Total de tarefas
+* Quantidade de tarefas concluídas
+* Quantidade de tarefas em andamento
+* Quantidade de tarefas pendentes
+* Percentual geral de conclusão
+* Quantidade de tarefas por prioridade
+
+Exemplo:
+
+```text
+=== RELATÓRIO DE PRODUTIVIDADE ===
+
+Total de tarefas: 10
+Concluídas: 5
+Em andamento: 3
+Pendentes: 2
+Conclusão geral: 50.0%
+
+=== TAREFAS POR PRIORIDADE ===
+
+Baixa: 2
+Média: 3
+Alta: 3
+Urgente: 2
+```
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+* **Python 3**
+* Programação Orientada a Objetos (POO)
+* `Enum`
+* `datetime`
+* Estruturas de dados (`list`)
+* Funções
+* Condicionais
+* Estruturas de repetição
+* Tratamento de exceções
+
+---
+
+## 📂 Estrutura do projeto
+
+Uma estrutura simples para o projeto pode ser:
+
+```text
+gerenciador-de-tarefas/
+│
+├── main.py
+└── README.md
+```
+
+Onde:
+
+* `main.py` → contém o código principal do sistema.
+* `README.md` → documentação do projeto.
+
+---
+
+## ▶️ Como executar
+
+### 1. Pré-requisito
+
+É necessário ter o **Python 3** instalado no computador.
+
+Para verificar a instalação:
+
+```bash
+python --version
+```
+
+ou:
+
+```bash
+python3 --version
+```
+
+### 2. Clone o repositório
+
+```bash
+git clone https://github.com/marciopimentel1985-tech/contaClientes.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd contaClientes
+```
+
+### 3. Execute o programa
+
+```bash
+python main.py
+```
+
+---
+
+## 🖥️ Menu do sistema
+
+Ao executar o programa, será apresentado o seguinte menu:
+
+```text
+==============================
+ GERENCIADOR DE TAREFAS
+==============================
+1 - Cadastrar usuário
+2 - Listar usuários
+3 - Cadastrar projeto
+4 - Listar projetos
+5 - Cadastrar tarefa
+6 - Listar tarefas
+7 - Iniciar tarefa
+8 - Concluir tarefa
+9 - Relatório
+0 - Sair
+```
+
+---
+
+## 💡 Conceitos de POO utilizados
+
+O projeto foi desenvolvido com foco em conceitos fundamentais de **Programação Orientada a Objetos**, incluindo:
+
+### Encapsulamento
+
+Os dados relacionados a usuários, projetos e tarefas são organizados dentro de suas respectivas classes.
+
+### Associação entre objetos
+
+Um usuário pode possuir vários projetos, enquanto um projeto pode possuir várias tarefas.
+
+A estrutura pode ser representada da seguinte maneira:
+
+```text
+Usuário
+   │
+   └── Projeto
+          │
+          ├── Tarefa
+          ├── Tarefa
+          └── Tarefa
+```
+
+### Enumerações
+
+Foram utilizadas `Enum` para representar os níveis de prioridade e os estados das tarefas:
+
+```python
+class Prioridade(Enum):
+    BAIXA = "Baixa"
+    MEDIA = "Média"
+    ALTA = "Alta"
+    URGENTE = "Urgente"
+```
+
+e:
+
+```python
+class Status(Enum):
+    PENDENTE = "Pendente"
+    EM_ANDAMENTO = "Em andamento"
+    CONCLUIDA = "Concluída"
+```
+
+---
+
+## ⚠️ Observações
+
+Este projeto possui caráter **educacional** e utiliza armazenamento em memória.
+
+Isso significa que os dados cadastrados são perdidos quando o programa é encerrado.
+
+O projeto não utiliza atualmente:
+
+* Banco de dados
+* Interface gráfica
+* Sistema de autenticação
+* API
+* Persistência de dados
+
+Esses recursos podem ser adicionados em versões futuras.
+
+---
+
+## 🔮 Possíveis melhorias
+
+Algumas funcionalidades que podem ser implementadas futuramente:
+
+* 💾 Persistência dos dados em banco de dados
+* 🔐 Sistema de login e autenticação
+* 🗄️ Integração com SQLite, MySQL ou PostgreSQL
+* 🖥️ Interface gráfica
+* 🌐 Desenvolvimento de uma API
+* 📅 Calendário de tarefas
+* 🔎 Pesquisa e filtros
+* ✏️ Edição de usuários, projetos e tarefas
+* 🗑️ Exclusão de usuários, projetos e tarefas
+* 📊 Gráficos de produtividade
+* 👥 Compartilhamento de projetos entre usuários
+
+---
+
+## 🎓 Objetivo acadêmico
+
+O projeto tem como objetivo aplicar, de forma prática, conceitos fundamentais de programação e **Programação Orientada a Objetos**, trabalhando com classes, objetos, métodos, enumerações, relacionamentos entre objetos, estruturas de dados e controle de fluxo.
+
+---
+
+## 👨‍💻 Autor
+
+**Marcio de Oliveira Pimentel**
+
+Projeto desenvolvido para fins acadêmicos e de aprendizado em programação.
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins educacionais.
